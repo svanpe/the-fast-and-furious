@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "e4bf7c4b-076c-49ec-abae-442b6a2e6770",
+		"name": "unit testing rest app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "local basic flow  discount on a basket of products /sc2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerIdentifier\" : \"0000000002\" , \r\n   \"purchaseList\": [\r\n     {\r\n            \"product\" : {\r\n                \"code\":\"45545\",\r\n                \"name\" : \"sockets\",\r\n                \"price\" : \"15.01\"\r\n\r\n            },\r\n            \"quantity\" : 2\r\n     },\r\n       {\r\n            \"product\" : {\r\n                \"code\":\"COKE4553334\",\r\n                \"name\" : \"coke cans 33cl\",\r\n                \"price\" : \"0.75\"\r\n\r\n            },\r\n            \"quantity\" : 6\r\n     }\r\n\r\n\r\n\r\n ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/discounts/compute",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"discounts",
+						"compute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "local basic flow  discount on a basket of products Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerIdentifier\": \"0000000004\",\r\n \"purchaseList\": [\r\n     {\r\n            \"product\" : {\r\n                \"code\":\"COKE4553334\",\r\n                \"name\" : \"coke cans 33cl\",\r\n                \"price\" : \"0.75\"\r\n\r\n            },\r\n            \"quantity\" : 6\r\n     }\r\n\r\n\r\n\r\n ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/discounts/compute",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"discounts",
+						"compute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redprices / local wiremock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9999/redprices/45545",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"redprices",
+						"45545"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
