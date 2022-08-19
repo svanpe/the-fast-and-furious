@@ -2,7 +2,6 @@ package be.tobania.fast.and.furious.discount;
 
 import be.tobania.fast.and.furious.discount.model.Basket;
 import be.tobania.fast.and.furious.discount.model.Discount;
-import org.jboss.resteasy.reactive.RestForm;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
