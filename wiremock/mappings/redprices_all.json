@@ -1,0 +1,14 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/redprices/.*"
+  },
+  "response": {
+    "status": 404,
+    "body": "Not Found",
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  }
+}

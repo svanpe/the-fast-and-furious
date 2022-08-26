@@ -1,0 +1,14 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/redprices/45545"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "/redprices/{{request.pathSegments.[1]}}.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
