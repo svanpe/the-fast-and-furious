@@ -54,3 +54,20 @@ If you want to learn more about building native executables, please consult http
 Easily start your Reactive RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+
+
+H2 Database
+
+You need H2 running as a server because native images doesn't support H2 memory database embedded
+
+Wiremock
+
+Wiremock is used to 
+go on ./wiremock and run wiremock-run.cmd
+
+
+To create a native container :
+docker build -f src/main/docker/Dockerfile.multistage -t quarkus-demo/discount-api-quarkus .
+
+To run everything at the same time:
+./docker-compose build

@@ -1,0 +1,48 @@
+# Data containers
+services:
+  h2:
+    image: oscarfonts/h2
+    container_name: h2
+    environment:
+       - H2_OPTIONS=-ifNotExists
+    ports:
+     - 1521:1521
+     - 81:81
+    networks:
+      - custom
+    volumes:
+     - ./..:/opt/h2-data
+  wiremock:
+      image:  wiremock/wiremock:2.33.2
+      container_name: wiremock
+      command: --port 9999 --global-response-templating
+      volumes:
+        - ./../wiremock/mappings:/home/wiremock
+      ports:
+        - 9999:9999
+      networks:
+        - custom
+  demo:
+#    image: quarkus-demo/discount-api-quarkus:latest
+    build: &build-dev
+      dockerfile: src/main/docker/Dockerfile.multistage
+      tags:
+       - quarkus-demo/discount-api-quarkus:latest
+    environment:
+      - DATABASE_URL=jdbc:h2:tcp://h2:1521/~./test
+      - WIREMOCK_URL=http://wiremock:9999
+    ports:
+       - 8080:8080
+    links:
+      - h2:h2
+      - wiremock:wiremock
+    networks:
+      - custom
+    depends_on:
+      - h2
+
+networks:
+
+  custom:
+    driver: bridge
+
