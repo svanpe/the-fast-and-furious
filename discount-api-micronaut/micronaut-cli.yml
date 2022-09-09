@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: be.tobania.fast.and.furious.discount
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, data, data-jpa, flyway, graalvm, h2, http-client, jackson-databind, java, java-application, jdbc-hikari, junit, maven, netty-server, openapi, properties, readme, shade, slf4j-simple]
