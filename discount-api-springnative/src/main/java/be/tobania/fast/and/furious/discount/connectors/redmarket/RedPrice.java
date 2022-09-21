@@ -3,13 +3,16 @@ package be.tobania.fast.and.furious.discount.connectors.redmarket;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 public class RedPrice {
 
-    private String productCode;
-    private String productName;
-    private LocalDate priceDate;
-    private BigDecimal price;
+    public String productCode;
+    public String productName;
+    public LocalDate priceDate;
+    public BigDecimal price;
 
+    public RedPrice() {
+    }
 
     public String getProductCode() {
         return productCode;
