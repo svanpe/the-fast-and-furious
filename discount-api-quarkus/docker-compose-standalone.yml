@@ -1,0 +1,32 @@
+# Data containers
+services:
+  h2:
+    image: oscarfonts/h2
+    container_name: h2
+    environment:
+       - H2_OPTIONS=-ifNotExists
+    ports:
+     - 1521:1521
+     - 81:81
+    networks:
+      - custom
+    volumes:
+     - ./..:/opt/h2-data
+  wiremock:
+      image:  wiremock/wiremock:2.33.2
+      container_name: wiremock
+      command: --port 9999 --global-response-templating
+      volumes:
+        - ./../wiremock/mappings:/home/wiremock/mappings
+        - ./../wiremock/__files:/home/wiremock/__files
+      ports:
+        - 9999:9999
+      networks:
+        - custom
+
+
+networks:
+
+  custom:
+    driver: bridge
+

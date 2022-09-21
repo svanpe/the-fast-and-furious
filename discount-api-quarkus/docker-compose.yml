@@ -17,7 +17,8 @@ services:
       container_name: wiremock
       command: --port 9999 --global-response-templating
       volumes:
-        - ./../wiremock/mappings:/home/wiremock
+        - ./../wiremock/mappings:/home/wiremock/mappings
+        - ./../wiremock/__files:/home/wiremock/__files
       ports:
         - 9999:9999
       networks:
