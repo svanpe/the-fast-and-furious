@@ -6,7 +6,7 @@
   },
   "response": {
     "status": 200,
-    "bodyFileName": "/redprices/{{request.pathSegments.[1]}}.json",
+    "bodyFileName": "redprices/{{request.pathSegments.[1]}}.json",
     "headers": {
       "Content-Type": "application/json"
     }
